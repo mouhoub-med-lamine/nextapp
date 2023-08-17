@@ -1,10 +1,37 @@
+"use client";
+
 import Image from 'next/image'
-import { Hero } from '@/Components'
+import { CustomButton, Hero } from '@/Components'
 
 export default function Home() {
+  const HandleGo = () =>{
+
+  }
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-     <Hero />
+    <main className="hero">
+      <div className='flex-1 pt-36 padding-x'>
+        <h1 className='hero__title'>
+          Hello , am learning to use this Framework ....
+        </h1>
+
+        <p className='hero__subtitle'>
+          I'm a Full Stack Web Developer, and i love building things that live on the internet.
+        </p>
+
+        <CustomButton 
+            title='Go ...' 
+            containerStyles='bg-primary-blue text-white rounded-full mt-10'
+            handleClick={HandleGo}
+            />
+        
+        <div className='hero__image-container'>
+          <div className='hero__image'>
+            <Image src='/hero.png' alt='hero' fill className='object-contain'/>
+            <div className='hero__image-overlay' />
+          </div>
+
+        </div>
+      </div>
     </main>
   )
 }
